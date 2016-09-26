@@ -14,8 +14,8 @@ configure wifi (/etc/wpa_supplicant/wpa_supplicant.conf)
 install git (sudo apt-get install git)
 install tornado (sudo pip intsall tornado)
 
-Download code
+Download code (sudo git clone https://github.com/CraigHissett/PiSenseHat.git)
 
-configure to launch on startup - 
+configure to launch on startup (sudo nano /etc/rc.local)
 
 Access Web Server ver home network
