@@ -27,6 +27,7 @@ class IndexHandler(tornado.web.RequestHandler):
             update_response['TempValue'] = str(GetValues('Temp'))
             update_response['HumidityValue'] = str(GetValues('Humidity'))
             update_response['PressureValue'] = str(GetValues('Pressure'))
+            print(update_response)
             self.write(json.dumps(update_response))
             return
         else:
