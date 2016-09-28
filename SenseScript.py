@@ -10,11 +10,13 @@ message = 'Temp is %d C Humidity is %d percent Pressure is %d mbars' %(temp,humi
 
 def GetValues(Requested):
     if Requested =="Pressure":
-        return str(pressure)
+        return pressure
     elif Requested=="Humidity":
-        return str(humidity)
+        return humidity
     elif Requested=="Temp":
-        return str(temp)
+        return temp
+    else:
+        return "N/A"
 
 def DisplayValues():
     sense.show_message(message, scroll_speed=(0.08),text_colour=[200,0,200],back_colour=[0,0,200])
