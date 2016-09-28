@@ -19,9 +19,16 @@ class IndexHandler(tornado.web.RequestHandler):
     def post (self):
         WebCommand = self.get_argument ('command', '')
         WebValue = self.get_argument ('value', '')
+        self.set_header('Content-Type', 'application/json; charset=UTF-8')
         
         if WebCommand == 'update':
-            GetValues()
+
+            update_response = {}
+            update_response['TempValue'] = GetValues("Temp") + " " + chr(176) + "C"
+            update_response['HumidityValue'] = GetValues["Humidity"]
+            update_response['PressureValue'] = GetValues["Pressure"]
+            self.write(json.dumps(update_response))
+            return
         else:
             print('Command not recognised')
 
@@ -39,5 +46,7 @@ if __name__ == "__main__":
     httpServer.listen(options.port)
     print ("Listening on port:", options.port)
     main_loop = tornado.ioloop.IOLoop.instance()
+    # Schedule event (5 seconds from now)
+    main_loop.call_later(5, DisplayValues)
     # Start main loop
     main_loop.start()
