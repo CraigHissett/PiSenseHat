@@ -10,8 +10,8 @@
         $.post("", {"command":"update", "value":true}, function(data) {
             //alert("update requested");//
             $('#TempDiv').html('The temperature is: ' +data.TempValue);
-            $('#PressureDiv').html('Humidity is: ' +data.PressureValue);
-            $('#HumidityDiv').html('Pressure is: ' +data.HumidityValue);
+            $('#PressureDiv').html('Pressure is: ' +data.PressureValue);
+            $('#HumidityDiv').html('Humidity is: ' +data.HumidityValue);
         });
       });
       $("#update_status").click();
