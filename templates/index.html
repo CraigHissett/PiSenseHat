@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Raspberry >Pi Sense Hat Monitor</title>
+  <script src="static/js/jquery-2.2.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#updatebutton").click(function(e) {
+        e.preventDefault();
+        $.post("", {"command":"update", "value":true}, function(data) {
+            //alert("update requested");//
+            $('#TempDiv').html('The temperature is: ' +data.TempValue);
+            $('#PressureDiv').html('Humidity is: ' +data.PressureValue);
+            $('#HumidityDiv').html('Pressure is: ' +data.HumidityValue);
+        });
+      });
+      $("#update_status").click();
+      //set interval(function(){
+      //    $("#updatebutton").click();
+      //    }, 5000);
+    });
+</script>
+</head>
+<body>
+<div align="center"> 
+  <h1>Pi Sense Hat Monitor</h1>
+<form>
+  <button id="updatebutton" name="update" value="True">Update Readings</button>
+  <p></p>
+</form>
+<p></p>
+<p>Current Readings:</p>
+<div id="TempDiv"></div>
+<div id="HumidityDiv"></div>
+<div id="PressureDiv"></div>
+<p></p>
+<p></p>
+</div>
+</body>
+</html>
