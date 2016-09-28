@@ -2,11 +2,11 @@ from sense_hat import SenseHat
 from time import sleep
 
 sense = SenseHat()
-    temp = round(sense.get_temperature())
-    humidity = round(sense.get_humidity())
-    pressure = round(sense.get_pressure())
-    message = 'Temp is %d C Humidity is %d percent Pressure is %d mbars' %(temp,humidity,pressure)
-    
+
+temp = round(sense.get_temperature())
+humidity = round(sense.get_humidity())
+pressure = round(sense.get_pressure())
+message = 'Temp is %d C Humidity is %d percent Pressure is %d mbars' %(temp,humidity,pressure)
     
 def GetValues(Requested):
     if Requested =="Pressure":
