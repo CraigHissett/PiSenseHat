@@ -10,11 +10,11 @@ message = 'Temp is %d C Humidity is %d percent Pressure is %d mbars' %(temp,humi
 
 def GetValues(Requested):
     if Requested =="Pressure":
-        return float(sense.get_pressure())
+        return pressure
     elif Requested=="Humidity":
-        return float(sense.get_humidity())
+        return humidity
     elif Requested=="Temp":
-        return float(sense.get_temperature())
+        return temp
     else:
         return "N/A"
 
