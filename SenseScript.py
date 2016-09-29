@@ -20,9 +20,9 @@ def GetValues(Requested):
 
 def DisplayValues():
     sense.show_message(message, scroll_speed=(0.08),text_colour=[200,0,200],back_colour=[0,0,200])
-    sense.clear
+    sense.clear()
 
 if __name__ == '__main__':
     while True:
-        DisplayValues
+        DisplayValues()
         sleep(5)
